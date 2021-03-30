@@ -1,15 +1,3 @@
-# GPT-Neo Model Card
-
-We recommend sharing information about each model in a `model_card`.
-
-The canonical documentation about model cards is at https://huggingface.co/docs
-
-One of the easiest way to get started is by using our template card. Simply copy `template.README.md` to `model_cards/USERNAME/MODELNAME/README.md` and fill it out while studying [demo.README.md](./demo.README.md) for an example of a model `model_card` and referring to rest of this short document if you are not sure about some specific fields.
-
-## YAML metadata section
-
-Here is a sample of a typical yaml metadata section:
-```
 ---
 language:
 - en
@@ -22,94 +10,44 @@ tags:
 license: apache-2.0
 datasets:
 - the Pile
-metrics:
-- bleu
-- sacrebleu
 ---
+
+# GPT Neo 2.7B
+
+The GPT Neo model is pretrained on the [The Pile](https://github.com/EleutherAI/the-pile) dataset: an 825GiB English text corpus targeted at training large-scale language models.
+It is an open source replication of OpenAI's GPT-3 model and is released in several checkpoints: the 1.3B and 2.7B variants.
+
+It was released on EleutherAI's [GitHub page](https://github.com/EleutherAI/gpt-neo) the 21st of March 2021.
+
+## Model Description
+
+GPT Neo is a transformers model pretrained on a very large corpus of English data in a self-supervised fashion. This means it was pretrained on the raw texts only, with no humans labeling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts. More precisely, inputs are sequences of continuous text of a certain length and the targets are the same sequence, shifted one token (word or piece of word) to the right. The model uses internally a mask-mechanism to make sure the predictions for the token i only uses the inputs from 1 to i but not the future tokens.
+
+It obtains a 5.646 perplexity on The Pile, and a 11.39 perplexity on Wikitext
+
+It uses a mix of global and local attention across its layers. It was trained for 400000 steps.
+
+## Intended Use and Limitations
+
+This way, the model learns an inner representation of the English language that can then be used to extract features useful for downstream tasks. The model is best at what it was pretrained for however, which is generating texts from a prompt.
+
+### How to use
+
+You can use this model directly with a pipeline for text generation. This example generates a different sequence each time it's run:
+
+```py
+>>> from transformers import pipeline
+>>> generator = pipeline('text-generation', model='EleutherAI/gpt-neo-2.7B')
+>>> generator("EleutherAI has", do_sample=True, min_length=50)
+
+[{'generated_text': 'EleutherAI has made a commitment to create new software packages for each of its major clients and has'}]
 ```
 
-**Important**:
-* This section has to be first in the document, before any markdown sections.
-* The data in this section doesn't need to be repeated again in the subsequent markdown sections - since it'll be automatically expanded into a user-friendly format on the website.
-
-### language
-
-ISO 639-1 code for your language (e.g. `ru`, `en`, `de`, or `multilingual`)
-
-### thumbnail 
-
-"url to a thumbnail used in social sharing"
-
-### tags:
-- array
-- of
-- tags
-
-### license
-
-One of the valid license identifiers. e.g.:
-
-```
-- apache-2.0
-- mit 
-```
-
-
-### datasets
-
-One or more dataset identifiers. 
-
-Example:
-
-```
-- wmt19
-- wmt16
-```
-
-You will find the supported list at https://huggingface.co/datasets
-
-### metrics:
-
-One or more metric identifiers. e.g.:
-
-```
-- bleu
-- rouge
-- sacrebleu
-```
-
-You will find the supported list at https://huggingface.co/metrics
-
-
-## Markdown
-
-
-# Model name
-
-## Model description
-
-You can embed local or remote images using `![](...)`
-
-## Intended uses & limitations
-
-#### How to use
-
-```python
-# You can include sample code which will be formatted
-```
-
-#### Limitations and bias
-
-Provide examples of latent issues and potential remediations.
+### Limitations and Biases
 
 ## Training data
 
-Describe the data you used to train the model.
-If you initialized it with pre-trained weights, add a link to the pre-trained model card or repository with description of the pre-training data.
-
 ## Training procedure
-
-Preprocessing, hardware used, hyperparameters...
 
 ## Eval results
 
