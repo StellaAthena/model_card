@@ -1,4 +1,4 @@
-# model_card templates
+# GPT-Neo Model Card
 
 We recommend sharing information about each model in a `model_card`.
 
@@ -12,15 +12,16 @@ Here is a sample of a typical yaml metadata section:
 ```
 ---
 language:
-- ru
 - en
-thumbnail: https://raw.githubusercontent.com/JetRunner/BERT-of-Theseus/master/bert-of-theseus.png
+thumbnail: https://www.eleuther.ai/images/eai_logo.png
 tags:
-- translation
-- fsmt
+- text generation
+- pytorch
+- the Pile
+- causal-lm
 license: apache-2.0
 datasets:
-- wmt19
+- the Pile
 metrics:
 - bleu
 - sacrebleu
