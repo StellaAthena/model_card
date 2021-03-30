@@ -14,9 +14,6 @@ datasets:
 
 # GPT Neo 2.7B
 
-The GPT Neo model is pretrained on the [The Pile](https://github.com/EleutherAI/the-pile) dataset: an 825GiB English text corpus targeted at training large-scale language models.
-It is an open source replication of OpenAI's GPT-3 model and is released in several checkpoints: the 1.3B and 2.7B variants.
-
 It was released on EleutherAI's [GitHub page](https://github.com/EleutherAI/gpt-neo) the 21st of March 2021.
 
 ## Model Description
