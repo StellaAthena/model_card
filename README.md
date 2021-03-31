@@ -42,6 +42,12 @@ You can use this model directly with a pipeline for text generation. This exampl
 
 ### Limitations and Biases
 
+GPT-Neo was trained as an autoregressive language model. This means that its core functionality is taking a string of text and predicting the next token. While language models are widely used for tasks other than this, there are a lot of unknowns with this work.
+
+GPT-Neo was trained on the Pile, a dataset known to contain profanity, lewd, and otherwise abrasive language. Depending on your usecase GPT-Neo may produce socially unacceptable text.
+
+As with all language models, it is hard to predict in advance how GPT-Neo will respond to particular prompts and offensive content may occur without warning. We recommend having a human curate or filter the outputs before releasing them, both to censor undesirable content and to improve the quality of results.
+
 ## Training data
 
 ## Training procedure
@@ -51,7 +57,10 @@ You can use this model directly with a pipeline for text generation. This exampl
 ### BibTeX entry and citation info
 
 ```bibtex
-@inproceedings{...,
+@article{gao2020pile,
+  title={The Pile: An 800GB Dataset of Diverse Text for Language Modeling},
+  author={Gao, Leo and Biderman, Stella and Black, Sid and Golding, Laurence and Hoppe, Travis and Foster, Charles and Phang, Jason and He, Horace and Thite, Anish and Nabeshima, Noa and others},
+  journal={arXiv preprint arXiv:2101.00027},
   year={2020}
 }
 ```
