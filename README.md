@@ -17,9 +17,7 @@ datasets:
 
 ## Model Description
 
-GPT-Neo is a transformer model pretrained on a very large corpus of English data in a self-supervised fashion. This means it was pretrained on the raw texts only, with no humans labeling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts. More precisely, inputs are sequences of continuous text of a certain length and the targets are the same sequence, shifted one token (word or piece of word) to the right. The model uses internally a mask-mechanism to make sure the predictions for the token i only uses the inputs from 1 to i but not the future tokens.
-
-It uses a mix of global and local attention across its layers. It was trained for 400000 steps.
+GPT-Neo 2.7B is a transformer model designed using EleutherAI's replication of the GPT-3 architecture. GPT-Neo refers to the class of models, while 2.7B represents the number of parameters of this particular pre-trained model. It is the same size as OpenAI's "Ada" model.
 
 ## Intended Use and Limitations
 
@@ -47,9 +45,11 @@ As with all language models, it is hard to predict in advance how GPT-Neo will r
 
 ## Training data
 
-GPT-Neo
+GPT-Neo 2.7B was trained on the Pile, a large scale curated dataset created by EleutherAI for the purpose of training this model.
 
 ## Training procedure
+
+This model was trained for 400,000 steps on the Pile.
 
 ## Eval results
 
