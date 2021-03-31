@@ -19,6 +19,15 @@ datasets:
 
 GPT-Neo 2.7B is a transformer model designed using EleutherAI's replication of the GPT-3 architecture. GPT-Neo refers to the class of models, while 2.7B represents the number of parameters of this particular pre-trained model. It is the same size as OpenAI's "Ada" model.
 
+## Training data
+
+GPT-Neo 2.7B was trained on the Pile, a large scale curated dataset created by EleutherAI for the purpose of training this model.
+
+## Training procedure
+
+This model was trained for 400,000 steps on the Pile.
+
+
 ## Intended Use and Limitations
 
 This way, the model learns an inner representation of the English language that can then be used to extract features useful for downstream tasks. The model is best at what it was pretrained for however, which is generating texts from a prompt.
@@ -41,16 +50,7 @@ GPT-Neo was trained as an autoregressive language model. This means that its cor
 
 GPT-Neo was trained on the Pile, a dataset known to contain profanity, lewd, and otherwise abrasive language. Depending on your usecase GPT-Neo may produce socially unacceptable text. See Sections 5 and 6 of the Pile paper for a more detailed analysis of the biases in the Pile.
 
-As with all language models, it is hard to predict in advance how GPT-Neo will respond to particular prompts and offensive content may occur without warning. We recommend having a human curate or filter the outputs before releasing them, both to censor undesirable content and to improve the quality of results.
-
-## Training data
-
-GPT-Neo 2.7B was trained on the Pile, a large scale curated dataset created by EleutherAI for the purpose of training this model.
-
-## Training procedure
-
-This model was trained for 400,000 steps on the Pile.
-
+As with all language models, it is hard to predict in advance how GPT-Neo will respond to particular prompts and offensive content may occur without warning. We recommend having a human curate or filter the outputs before releasing them, both to censor undesirable content and to improve the quality of the results. 
 ## Eval results
 
 ### Language Modeling Baselines
