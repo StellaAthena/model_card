@@ -25,8 +25,7 @@ GPT-Neo 2.7B was trained on the Pile, a large scale curated dataset created by E
 
 ## Training procedure
 
-This model was trained for 400,000 steps on the Pile.
-
+This model was trained for 400,000 steps on the Pile. It was trained as a masked autoregressive language model, using cross-entropy loss.
 
 ## Intended Use and Limitations
 
