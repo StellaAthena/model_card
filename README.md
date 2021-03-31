@@ -53,18 +53,22 @@ GPT-Neo
 
 ## Eval results
 
-EleutherAI is currently in the process of carrying out further evaluations of GPT-Neo.
+### Language Modeling Baselines
 
-| Model and Size | Pile BPB      | Pile PPL      | Lambada Acc.   | Lambada PPL.   | Wikitext PPL.  |
-| -------------- | ------------- | ------------- | -------------- | -------------- | -------------- |
-| GPT-Neo 1.3B   |  0.7527       | 6.159         | -----          | -----          | 13.10          |
-| GPT-3 1.3B     |  ------       | -----         | -----          | -----          | -----          |
-| GPT-2 1.5B     |  1.0468       | -----         | -----          | -----          | 17.48          |
-| GPT-Neo 2.7B   |  0.7165       | 5.646         | -----          | -----          | 11.39          |
-| GPT-3 Ada 2.7B |  0.9631       | -----         | -----          | -----          | -----          |
-| GPT-3 175B     |  0.7177       | -----         | -----          | -----          | -----          |
+EleutherAI is currently in the process of carrying out further evaluations of GPT-Neo. The following table should be considered a work-in-progress. If you would like to contribute evaluations you have done, please reach out on our Discord.
+
+| Model and Size   | Pile BPB      | Pile PPL      | Wikitext PPL.  |
+| ---------------- | ------------- | ------------- | -------------- |
+| GPT-Neo 1.3B     |  0.7527       | 6.159         | 13.10          |
+| GPT-3 1.3B       |  ------       | -----         | -----          |
+| GPT-2 1.5B       |  1.0468       | -----         | 17.48          |
+| **GPT-Neo 2.7B** |  **0.7165**   | **5.646**     | **11.39**      |
+| GPT-3 Ada 2.7B   |  0.9631       | -----         | -----          |
+| GPT-3 175B       |  0.7177       | -----         | -----          |
 
 All GPT-2 and GPT-3 scores are from their respective papers, except for the Pile test results which are from the Pile paper.
+
+### Down-Stream Applications
 
 ### BibTeX entry and citation info
 
